@@ -8,13 +8,12 @@ def post_new_user(user_body):
                          json=user_body,
                          headers=data.headers)
 
-# Obtiene el authToken
-user_response=post_new_user(data.user_body)
-response_json=user_response.json()
-auth_token=response_json.get("authToken")
-
 # Define la función para enviar la solicitud POST para crear un kit
 def post_new_kit(new_kit):
+    # Obtiene el authToken
+    user_response = post_new_user(data.user_body)
+    response_json = user_response.json()
+    auth_token = response_json.get("authToken")
     autorizacion = {
         "Content-Type": "application/json",
         "Authorization": f'Bearer {auth_token}'

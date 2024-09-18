@@ -20,7 +20,7 @@ def negative_assert(kit_body):
 
     # TEST
 # Test 1: nombre con 1 carácter
-    def test_kit_name_minimum_characters():
+def test_kit_name_minimum_characters():
         kit_body = get_kit_body("a")
         # Pasar auth_token a la función de aserción
         positive_assert(kit_body)
